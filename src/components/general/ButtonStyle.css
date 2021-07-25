@@ -1,0 +1,30 @@
+.button {
+  font-family: 'Montserrat', Arial, sans-serif;
+  height: 40px;
+  border: 2px solid;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button.big {
+  width: 300px;
+  height: 60px;
+  font-size: 2em;
+  border: solid 3px;
+  border-radius: 10px;
+}
+
+.button.seaweed {
+  background-color: white;
+  color: var(--color-metallic-seaweed);
+  transition: ease-in-out 0.1s;
+}
+
+.button.seaweed:hover {
+  color: white;
+  background-color: var(--color-metallic-seaweed);
+  border-color: var(--color-metallic-seaweed);
+  cursor: pointer;
+}

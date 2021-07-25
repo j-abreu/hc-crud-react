@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sun } from 'react-feather';
+import './HeaderStyle.css';
 
-const Header = () => {
+const Header = ({setSection}) => {
   return (
-    <Link to='/' className='App-header-container'>
-      <div className='--logo'>
-        <Sun size={48} />
+    <header className='App-header'>
+      <div onClick={() => setSection('menu')} className='App-header-container'>
+        <div className='--logo'>
+          <Sun size={48} />
+        </div>
+        <div className='--title'>
+          <span>Sunlight Interprise</span>
+        </div>
       </div>
-      <div className='--name'>
-        <span>Sunlight Interprise</span>
-      </div>
-    </Link>
+    </header>
   );
 }
 

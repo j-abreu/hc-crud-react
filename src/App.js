@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-import Header from './components/Header/Header';
-import Menu from './components/Menu/Menu';
-import Footer from './components/Footer/Footer';
+import Header from './components/header/Header';
+import Menu from './components/menu/Menu';
+import Footer from './components/footer/Footer';
+import SectionWrapper from './components/sectionWrapper/SectionWrapper';
+import ProductsSection from './components/products/ProductsSection';
 
 function App() {
+  const [section, setSection] = useState('menu');
+
+  const sections = {
+    menu: <Menu setSection={setSection} />,
+    products: <ProductsSection setSection={setSection}/>,
+  }
+
   return (
     <div id='App' className='App'>
-      <header className='App-header'>
-        <Header />
-      </header>
-      <main className='App-body'>
-        <Menu />
-      </main>
-      <footer className='App-footer'>
-        <Footer />
-      </footer>
+      <SectionWrapper setSection={setSection} content={sections[section]} />;
     </div>
   );
 }

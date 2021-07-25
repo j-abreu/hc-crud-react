@@ -1,0 +1,16 @@
+.App-footer {
+  background-color: var(--color-lavender-web);
+}
+
+.footer-container {
+  color: var(--color-metallic-seaweed)
+}
+
+.footer-container a {
+  text-decoration: none;
+  color: var(--color-metallic-seaweed);
+}
+
+.footer-container a:hover {
+  color: var(--color-gunmetal);
+}

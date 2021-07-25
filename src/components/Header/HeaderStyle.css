@@ -1,0 +1,27 @@
+.App-header {
+  background-color: var(--color-gunmetal);
+  max-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-lavender-web);
+  text-decoration: none;
+}
+
+.App-header-container:hover {
+  cursor: pointer;
+}
+
+.App-header-container .--logo {
+  margin: 0 10px;
+}
+
+.App-header-container .--title {
+  font-size: 1.2em;
+}

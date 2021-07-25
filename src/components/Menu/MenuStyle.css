@@ -1,0 +1,38 @@
+.section-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-message h1 {
+  color: var(--color-metallic-seaweed);
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60vw;
+  height: 60vh;
+  background-color: var(--color-lavender-web);
+  border-radius: 10px;
+}
+
+.menu-container-products {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.menu-container-products a {
+  text-decoration: none;
+}
+
+.menu-container-costumers {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.menu-container-costumers a {
+  text-decoration: none;
+}
+

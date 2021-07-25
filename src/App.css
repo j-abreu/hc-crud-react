@@ -1,15 +1,19 @@
+:root {
+  --color-gunmetal: #022B3A;
+  --color-metallic-seaweed: #1F7A8C;
+  --color-beau-blue: #BFDBF7;
+  --color-lavender-web: #E1E5F2;
+  --color-white: #ffffff;
+}
+
 .App {
   text-align: center;
   display: grid;
   grid-template-rows: 
     80px
-    1fr
-    50px;
-}
-
-.App-header {
-  background-color: #282c34;
-  max-height: 80px;
+    calc(100vh - 180px)
+    100px;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
