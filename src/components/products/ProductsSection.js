@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Trash2 } from 'react-feather';
 import { ArrowLeftCircle } from 'react-feather';
+import {v4} from 'uuid';
 import './ProductsSectionStyle.css';
 import Input from '../general/Input';
 import Button from '../general/Button';
@@ -22,6 +23,22 @@ const ProductsSection = ({setSection}) => {
     }
   }, [])
 
+  const onSubmit = () => {
+    const localProducts = [...savedProducts];
+    const newProduct = {
+      id: v4(),
+      name,
+      price,
+      quantity,
+    };
+    localProducts.unshift(newProduct);
+    window.localStorage.setItem('hc-products', JSON.stringify(localProducts));
+    setSavedProducts(localProducts);
+    setName('');
+    setPrice('');
+    setQuantity('');
+  }
+
   const handleOnChangeName = (e) => {
     setName(e.currentTarget.value);
   }
@@ -34,49 +51,33 @@ const ProductsSection = ({setSection}) => {
     setQuantity(e.currentTarget.value);
   }
 
+  const handleDelete = (id) => {
+    console.log(savedProducts)
+    const newProductList = savedProducts.filter((prod) => prod.id !== id);
+    window.localStorage.setItem('hc-products', JSON.stringify(newProductList));
+    console.log(newProductList);
+    setSavedProducts(newProductList);
+  }
+
   const renderProducts = () =>{
     if (savedProducts.length > 0) {
       return savedProducts.map((product, idx) => 
         <div key={idx} className='product'>
-          <div className='--name'>
+          <span className='--name'>
             {product.name}
-          </div>
-          <div className='--price'>
+          </span>
+          <span className='--price'>
             {product.price}
-          </div>
-          <div className='--quantity'>
+          </span>
+          <span className='--quantity'>
             {product.quantity}
-          </div>
-          <Button icon={<Trash2 />}></Button>
+          </span>
+          <Button icon={<Trash2 />} handleClick={() => handleDelete(product.id)}></Button>
         </div>
       );
-    } else {
-      return <></>;
-    }
-  }
-
-  const onSubmit = () => {
-    const localStorage = window.localStorage;
-    const localProducts = JSON.parse(localStorage.getItem('hc-products'));
-    if (localProducts) {
-      localProducts.push({
-        name,
-        price,
-        quantity
-      })
-      localStorage.setItem('hc-products', JSON.stringify(localProducts));
-    } else {
-      const newProductList = [
-        {
-          name,
-          price,
-          quantity
-        }
-      ];
-      localStorage.setItem('hc-products', JSON.stringify(newProductList));
     }
 
-    setSavedProducts(JSON.parse(localStorage.getItem('hc-products')));
+    return <></>;
   }
 
   return (
