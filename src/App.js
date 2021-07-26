@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-import Menu from './components/menu/Menu.js';
+import Menu from './components/menu/Menu';
 import SectionWrapper from './components/sectionWrapper/SectionWrapper';
 import ProductsSection from './components/products/ProductsSection';
 import CostumersSection from './components/costumers/CostumersSection';
