@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Trash2 } from 'react-feather';
-import SectionWrapper from '../sectionWrapper/SectionWrapper';
 import { ArrowLeftCircle } from 'react-feather';
 import './ProductsSectionStyle.css';
 import Input from '../general/Input';

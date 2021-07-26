@@ -1,7 +1,4 @@
-import react from 'react';
-import { Link } from 'react-router-dom';
 import Button from '../general/Button';
-import SectionWrapper from '../sectionWrapper/SectionWrapper';
 import './MenuStyle.css';
 
 const Menu = ({setSection}) => {
