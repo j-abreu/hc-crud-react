@@ -16,7 +16,7 @@ const Menu = ({setSection}) => {
           <Button handleClick={() => setSection('products')} title='Produtos' size='big' color='seaweed' />
         </div>
         <div className='menu-container-costumers'>
-          <Button title='Clientes' size='big' color='seaweed' />
+          <Button handleClick={() => setSection('costumers')} title='Clientes' size='big' color='seaweed' />
         </div>
       </div>
     </section>
