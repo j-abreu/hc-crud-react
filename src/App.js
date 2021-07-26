@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div id='App' className='App'>
-      <SectionWrapper setSection={setSection} content={sections[section]} />;
+      <SectionWrapper setSection={setSection} content={sections[section]} />
     </div>
   );
 }
